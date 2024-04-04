@@ -15,6 +15,7 @@
         <h1 class="font-weight-normal">Contact</h1>
       </div> <!-- .container -->
     </div> <!-- .banner-section -->
+    <!-- .banner-section -->
   </div> <!-- .page-banner -->
   @if ($errors->any())
   <div class="alert alert-danger">
