@@ -25,10 +25,18 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.5;
   color: #343531;
+    background-color: lightgray;
+    /*background-image: url("../img/legal.png");*/
+    /*background-size: cover;*/
+
+}
+.container{
+    /*background-image: url("../img/legal.png");*/
+    /*background-size: cover;*/
 }
 
 a {
-  color: #07be94;
+  color: gray;
   text-decoration: none;
   background-color: transparent;
 }

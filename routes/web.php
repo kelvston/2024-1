@@ -21,6 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@home')->name('home');
+Route::get('/edit_user', 'HomeController@editAccount')->name('edit_user');
 Route::get('/admin/about', 'PagesController@about')->name('about');
 Route::get('/admin/blog_details', 'PagesController@blog_details')->name('blog_details');
 Route::get('/admin/blog', 'PagesController@blog')->name('blog');

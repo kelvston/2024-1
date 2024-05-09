@@ -1,5 +1,12 @@
 {
-  "devDependencies": {
-    "laravel-mix": "^6.0.49"
-  }
+    "devDependencies": {
+        "laravel-mix": "^6.0.49"
+    },
+    "name": "IMS",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node server.js"
+    }
 }
+

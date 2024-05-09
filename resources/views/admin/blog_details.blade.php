@@ -8,7 +8,7 @@
             <ol class="breadcrumb bg-transparent py-0 mb-5">
               <li class="breadcrumb-item"><a href="index.html">Home</a></li>
               <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
-              <li class="breadcrumb-item active" aria-current="page">List of Countries without Coronavirus case</li>
+              <li class="breadcrumb-item active" aria-current="page">Welcome to the legal section</li>
             </ol>
           </nav>
         </div>
@@ -18,11 +18,11 @@
         <div class="col-lg-8">
           <article class="blog-details">
             <div class="post-thumb">
-              <img src="../assets/img/blog/blog_1.jpg" alt="">
+              <img src="../assets/img/legal_background.png" alt="">
             </div>
             <div class="post-meta">
               <div class="post-author">
-                <span class="text-grey">By</span> <a href="#">Admin</a>  
+                <span class="text-grey">By</span> <a href="#">Admin</a>
               </div>
               <span class="divider">|</span>
               <div class="post-date">
@@ -30,7 +30,7 @@
               </div>
               <span class="divider">|</span>
               <div>
-                <a href="#">StreetStyle</a>, <a href="#">Fashion</a>, <a href="#">Couple</a>  
+                <a href="#">StreetStyle</a>, <a href="#">Fashion</a>, <a href="#">Couple</a>
               </div>
               <span class="divider">|</span>
               <div class="post-comment-count">
@@ -49,6 +49,10 @@
               <a href="#" class="tag-link">Coronavirus</a>
             </div>
           </article> <!-- .blog-details -->
+            <div class="col-lg-10">
+            @include('layouts.chat')
+            </div>
+{{--            @include('layouts.doctors')--}}
 
           <div class="comment-form-wrap pt-5">
             <h3 class="mb-5">Leave a comment</h3>
@@ -67,7 +71,7 @@
                 <label for="website">Website</label>
                 <input type="url" class="form-control" id="website">
               </div>
-  
+
               <div class="form-group">
                 <label for="message">Message</label>
                 <textarea name="msg" id="message" cols="30" rows="8" class="form-control"></textarea>
@@ -75,7 +79,7 @@
               <div class="form-group">
                 <input type="submit" value="Post Comment" class="btn btn-primary">
               </div>
-  
+
             </form>
           </div>
         </div>
@@ -163,7 +167,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
             </div>
           </div>
-        </div> 
+        </div>
       </div> <!-- .row -->
     </div> <!-- .container -->
   </div> <!-- .page-section -->
@@ -240,12 +244,12 @@
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
 
   <script src="../assets/js/bootstrap.bundle.min.js"></script>
-  
+
   <script src="../assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
-  
+
   <script src="../assets/vendor/wow/wow.min.js"></script>
-  
+
   <script src="../assets/js/theme.js"></script>
-  
+
 </body>
 </html>

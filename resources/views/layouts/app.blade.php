@@ -22,6 +22,23 @@
     <link rel="stylesheet" href="../assets/css/maicons.css">
 
   <link rel="stylesheet" href="../assets/css/bootstrap.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap-touchspin.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/dropzone.css">
+  <link rel="stylesheet" href="../assets/css/fancytree.css">
+  <link rel="stylesheet" href="../assets/css/flatpickr.css">
+  <link rel="stylesheet" href="../assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../assets/css/rangeslider.css">
+  <link rel="stylesheet" href="../assets/css/jvectormap.css">
+  <link rel="stylesheet" href="../assets/css/jvectormapmaterial-icons.css">
+  <link rel="stylesheet" href="../assets/css/material-icons.css">
+  <link rel="stylesheet" href="../assets/css/nestable.css">
+  <link rel="stylesheet" href="../assets/css/preloader.css">
+  <link rel="stylesheet" href="../assets/css/quill.css">
+  <link rel="stylesheet" href="../assets/css/select2.css">
+  <link rel="stylesheet" href="../assets/css/sweetalert.css">
+  <link rel="stylesheet" href="../assets/css/toastr.css">
 
   <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
 
@@ -38,9 +55,9 @@
         <div class="row">
           <div class="col-sm-8 text-sm">
             <div class="site-info">
-              <a href="#"><span class="mai-call text-primary"></span> +255754240753</a>
+              <a href="https://web.whatsapp.com/"><span class="mai-logo-whatsapp text-primary"></span> +255788339939</a>
               <span class="divider">|</span>
-              <a href="#"><span class="mai-mail text-primary"></span> admin@admin.com</a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nicombukoti1909@gmail.com&su=SUBJECT&body=BODY&bcc=nicombukoti1909@gmail.com"><span class="mai-mail text-primary"></span> nicombukoti1909@gmail.com</a>
             </div>
           </div>
           <div class="col-sm-4 text-right text-sm">
@@ -55,9 +72,9 @@
       </div> <!-- .container -->
     </div> <!-- .topbar -->
 
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm">
             <div class="container">
-                    <a href="#"><span class="text-primary">{{ config('app.name', 'Laravel') }}</span>-SYSTEM
+                    <a class="nav-link" href="/"><span class="text-primary">WAKILI </span>MTANDAO
                 </a>
                 <form action="3" method="GET">
                   <div class="input-group input-navbar">
@@ -79,7 +96,7 @@
                     <!-- Left Side Of Navbar -->
 
 
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav  ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item active">
                             <a class="nav-link" href="/">Home</a>
@@ -94,7 +111,7 @@
                             <a class="nav-link" href="/admin/blog">News</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="/admin/blog_details">blog</a>
+{{--                            <a class="nav-link" href="/admin/blog_details">blog</a>--}}
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="/products/create">Contact</a>

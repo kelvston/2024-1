@@ -1,4 +1,5 @@
-<div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/moja.png);">
+<div class="container">
+<div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/legal_background.png);">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
         <span class="subhead">Development Transformation</span>
@@ -7,3 +8,4 @@
       </div>
     </div>
   </div>
+</div>

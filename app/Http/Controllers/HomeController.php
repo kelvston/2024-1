@@ -41,4 +41,9 @@ class HomeController extends Controller
         $users = User::with('product')->get();
         return view('home')->with('users', $users,  'products');
     }
+
+    public function editAccount(){
+        $user = auth()->user();
+        return view('edit_user')->with('user', $user);
+    }
 }
