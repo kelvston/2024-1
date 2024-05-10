@@ -12,7 +12,7 @@
 <div class="page-section pt-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <nav aria-label="Breadcrumb">
                     <ol class="breadcrumb bg-transparent py-0 mb-5">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -23,7 +23,7 @@
             </div>
         </div> <!-- .row -->
 
-        <div class="row">
+        <div class="row ">
             <div class="col-lg-8">
                 <article class="blog-details">
                     <div class="post-thumb">
@@ -54,7 +54,7 @@
                                     uwakili (uwanasheria) kieletroniki ndani na nje ya nchi pasipokujali umbali kwa masaa 24.
                                 </li>
                                 <li>Wakili mtandao tunajishughulisha na utoaji wa ushauri wa kisheria katika nyanja zote za sheria.</li>
-                                <li>Wakili mtandao tunajihusisha na usimamizi wa mashauri (cases) kwenye vyombo vyote vya utoaji haki,
+                                <li>Wakili mtandao tunajihusisha na usimamizi wa mashaur00i (cases) kwenye vyombo vyote vya utoaji haki,
                                     mfano, mahakama, mabaraza, na bodi/tume za usuluhishi na n.k.
                                 </li>
                                 <li>Wakili mtandao pia tunajishughulisha na uandaaji wa nyaraka zote za kisheria, mfano, viapo,
@@ -126,8 +126,8 @@
                     <div class="sidebar-block">
                         <h3 class="sidebar-title">Categories</h3>
                         <ul class="categories">
-                            <li><a href="#">Food <span>12</span></a></li>
-                            <li><a href="#">Dish <span>22</span></a></li>
+                            <li><a href="#">Cases <span>12</span></a></li>
+                            <li><a href="#">users <span>22</span></a></li>
                             <li><a href="#">Desserts <span>37</span></a></li>
                             <li><a href="#">Drinks <span>42</span></a></li>
                             <li><a href="#">Ocassion <span>14</span></a></li>

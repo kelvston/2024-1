@@ -45,6 +45,35 @@
   <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
 
   <link rel="stylesheet" href="../assets/css/theme.css">
+
+    <style>
+        .dropdown-menu-right {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            float: left;
+            min-width: 10rem;
+            padding: 0.5rem 0;
+            margin: 0.125rem 0 0;
+            font-size: 1rem;
+            color: #212529;
+            text-align: left;
+            list-style: none;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid rgba(0,0,0,.15);
+            border-radius: 0.25rem;
+        }
+
+        .dropdown-menu-right.show {
+            display: block;
+        }
+
+    </style>
+
+
 </head>
 <body>
         <div class="back-to-top"></div>
@@ -99,24 +128,67 @@
                     <ul class="navbar-nav  ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item active">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="btn btn-dark ml-lg-3" href="/">Msaada wa kisheria</a>
                           </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="/admin/about">About Us</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="/admin/doctors">Doctors</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="/admin/blog">News</a>
-                          </li>
-                          <li class="nav-item">
-{{--                            <a class="nav-link" href="/admin/blog_details">blog</a>--}}
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="/products/create">Contact</a>
-                          </li>
-                        @guest
+                        <li class="nav-item dropdown">
+                            <a id="doctors-link" class="btn btn-dark ml-lg-3 dropdown-toggle" href="/admin/doctors" role="button" aria-haspopup="true" aria-expanded="false">
+                                Stamps/ mihuri
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="doctors-link">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    certification
+                                </a>
+                                <a class="dropdown-item" href="/consultation">viapo/ oath</a> <!-- New Consultation item -->
+{{--                                <a class="dropdown-item" href="/consultation">Consultation</a> <!-- New Consultation item -->--}}
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                <!-- Add more dropdown items here if needed -->
+                            </div>
+                        </li>
+
+                        <!-- News Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a id="news-link" class="btn btn-dark ml-lg-3 dropdown-toggle" href="/admin/blog" role="button" aria-haspopup="true" aria-expanded="false">
+                                Drafting/uandishi
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="news-link">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Plaint
+                                </a>
+                                <a class="dropdown-item" href="/consultation">applications</a>
+                                <a class="dropdown-item" href="/consultation">replays (WSD)</a>
+                                <a class="dropdown-item" href="/consultation">submissions</a>
+                                <a class="dropdown-item" href="/consultation">witness statements (WS)</a>
+                                <a class="dropdown-item" href="/consultation">others </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                <!-- Add more dropdown items here if needed -->
+                            </div>
+                        </li>
+
+                        <!-- Contact Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a id="contact-link" class="btn btn-dark ml-lg-3 dropdown-toggle" href="/products/create" role="button" aria-haspopup="true" aria-expanded="false">
+                                Msaada
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="contact-link">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    call center
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                <!-- Add more dropdown items here if needed -->
+                            </div>
+                        </li>
+                        <li class="nav-item">
+
+                            <a class="btn btn-dark ml-lg-3"  href="/admin/about">About Us</a>
+                        </li>
+
+                    @guest
                             <li class="nav-item">
                                 <a class="btn btn-primary ml-lg-3" href="{{ route('login') }}">{{ __('Login') }}</a>
                             @if (Route::has('register'))
@@ -148,8 +220,95 @@
         <main class="py-4">
             @yield('content')
         </main>
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              var doctorsLink = document.getElementById('doctors-link');
+              var doctorsDropdown = document.querySelector('#doctors-link + .dropdown-menu');
+              var newsLink = document.getElementById('news-link');
+              var newsDropdown = document.querySelector('#news-link + .dropdown-menu');
+              var contactLink = document.getElementById('contact-link');
+              var contactDropdown = document.querySelector('#contact-link + .dropdown-menu');
 
- <script src="../assets/js/jquery-3.5.1.min.js"></script>
+              // Function to close all dropdowns except the specified one
+              function closeDropdowns(excludeDropdown) {
+                  if (doctorsDropdown && doctorsDropdown !== excludeDropdown) doctorsDropdown.classList.remove('show');
+                  if (newsDropdown && newsDropdown !== excludeDropdown) newsDropdown.classList.remove('show');
+                  if (contactDropdown && contactDropdown !== excludeDropdown) contactDropdown.classList.remove('show');
+              }
+
+              if (doctorsLink && doctorsDropdown) {
+                  doctorsLink.addEventListener('mouseenter', function() {
+                      closeDropdowns(doctorsDropdown);
+                      doctorsDropdown.classList.add('show');
+                  });
+
+                  doctorsLink.addEventListener('mouseleave', function() {
+                      // Delay hiding the dropdown to allow moving the mouse to the dropdown
+                      setTimeout(function() {
+                          doctorsDropdown.classList.remove('show');
+                      }, 5000); // Adjust the delay as needed
+                  });
+
+                  doctorsDropdown.addEventListener('mouseenter', function() {
+                      doctorsDropdown.classList.add('show');
+                  });
+
+                  doctorsDropdown.addEventListener('mouseleave', function() {
+                      doctorsDropdown.classList.remove('show');
+                  });
+              }
+
+              if (newsLink && newsDropdown) {
+                  newsLink.addEventListener('mouseenter', function() {
+                      closeDropdowns(newsDropdown);
+                      newsDropdown.classList.add('show');
+                  });
+
+                  newsLink.addEventListener('mouseleave', function() {
+                      // Delay hiding the dropdown to allow moving the mouse to the dropdown
+                      setTimeout(function() {
+                          newsDropdown.classList.remove('show');
+                      }, 5000); // Adjust the delay as needed
+                  });
+
+                  newsDropdown.addEventListener('mouseenter', function() {
+                      newsDropdown.classList.add('show');
+                  });
+
+                  newsDropdown.addEventListener('mouseleave', function() {
+                      newsDropdown.classList.remove('show');
+                  });
+              }
+
+              if (contactLink && contactDropdown) {
+                  contactLink.addEventListener('mouseenter', function() {
+                      closeDropdowns(contactDropdown);
+                      contactDropdown.classList.add('show');
+                  });
+
+                  contactLink.addEventListener('mouseleave', function() {
+                      // Delay hiding the dropdown to allow moving the mouse to the dropdown
+                      setTimeout(function() {
+                          contactDropdown.classList.remove('show');
+                      }, 5000); // Adjust the delay as needed
+                  });
+
+                  contactDropdown.addEventListener('mouseenter', function() {
+                      contactDropdown.classList.add('show');
+                  });
+
+                  contactDropdown.addEventListener('mouseleave', function() {
+                      contactDropdown.classList.remove('show');
+                  });
+              }
+          });
+      </script>
+
+
+
+
+
+      <script src="../assets/js/jquery-3.5.1.min.js"></script>
 
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
 

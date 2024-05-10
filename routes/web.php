@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ChatController;
 
 
 /*
@@ -28,6 +29,8 @@ Route::get('/admin/blog', 'PagesController@blog')->name('blog');
 Route::get('/admin/doctors', 'PagesController@doctors')->name('doctors');
 Route::get('/admin/contact', 'PagesController@contact')->name('contact');
 Route::get('/admin/index', 'PagesController@index')->name('index');
+Route::get('/chat', [ChatController::class, 'index']);
+Route::post('/chat/send', [ChatController::class, 'sendMessage']);
 
 Route::get('googleAutocomplete', 'GoogleController@index');
 // Route::get('products','ProductController@index');
