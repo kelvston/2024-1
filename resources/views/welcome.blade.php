@@ -11,17 +11,17 @@
 
 <div class="page-section pt-5">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <nav aria-label="Breadcrumb">
-                    <ol class="breadcrumb bg-transparent py-0 mb-5">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Welcome to the legal section</li>
-                    </ol>
-                </nav>
-            </div>
-        </div> <!-- .row -->
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-12">--}}
+{{--                <nav aria-label="Breadcrumb">--}}
+{{--                    <ol class="breadcrumb bg-transparent py-0 mb-5">--}}
+{{--                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>--}}
+{{--                        <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>--}}
+{{--                        <li class="breadcrumb-item active" aria-current="page">Welcome to the legal section</li>--}}
+{{--                    </ol>--}}
+{{--                </nav>--}}
+{{--            </div>--}}
+{{--        </div> <!-- .row -->--}}
 
         <div class="row ">
             <div class="col-lg-8">

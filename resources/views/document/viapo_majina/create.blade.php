@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    
+
     <style>
        #pdf-preview-container {
             position: relative;
@@ -23,7 +23,7 @@
             top: 10px;
             right: 10px;
             z-index: 1000;
-            padding: 8px 12px; 
+            padding: 8px 12px;
             background-color: #58718b;
             color: #fff;
             border: none;
@@ -39,6 +39,7 @@
     </style>
 </head>
 @include('layouts.app')
+
 <div class="row">
     <div class="col-md-5">
         <form id="uploadFormMajina" action="{{ route('document.save_names') }}" method="POST" enctype="multipart/form-data">
@@ -53,6 +54,10 @@
                         <div class="form-group row">
                             <label for="address">Address:</label>
                             <input type="string" name="address" id="address" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="religion">Religion:</label>
+                            <input type="string" name="religion" id="religion" required>
                         </div>
                         <div class="form-group row">
                             <label for="occupation">Occupation:</label>
@@ -72,7 +77,7 @@
                                 <button type="button" id="addJinaKosewa" class="btn btn-primary ml-2">+</button>
                             </div>
                         </div>
-                
+
                         <div class="form-group row">
                             <button type="submit">submit & preview</button>
                         </div>
@@ -80,7 +85,7 @@
                 </div>
             </div>
         </form>
-        <div class="col-md-2"> 
+        <div class="col-md-2">
             <div id="pdf-lists">
                 <div class="card-header">{{ "MY DOCUMENTS" }}</div>
                 <ul class="list-group">
@@ -126,12 +131,13 @@
 
                 const datas = data.data
                 $.ajax({
-                    url: '{{ route("generate.pdf") }}', 
+                    url: '{{ route("generate.pdf") }}',
                     type: 'POST',
                     data: {
                         datas
                     },
                     success: function(response) {
+                        console.log('hapa')
                         Swal.fire({
                             title: 'Success!',
                             text: 'The PDF has been generated successfully.',
@@ -171,31 +177,31 @@
           });
         });
 
-    
+
         $('#pdf-lists').on('click', '.list-group-item', function() {
             var pdfUrl = $(this).data('url');
             var documentId = $(this).data('id');
             console.log(documentId);
             renderPDF(pdfUrl, documentId);
         });
-    
+
         function renderPDF(pdfUrl, documentId) {
             var pdfjsLib = window['pdfjs-dist/build/pdf'];
-    
+
             pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
-    
+
             var loadingTask = pdfjsLib.getDocument(pdfUrl);
             loadingTask.promise.then(function(pdf) {
                 var pageNumber = 1;
                 pdf.getPage(pageNumber).then(function(page) {
                     var scale = 1.5;
                     var viewport = page.getViewport({ scale: scale });
-    
+
                     var canvas = document.createElement('canvas');
                     var context = canvas.getContext('2d');
                     canvas.height = viewport.height;
                     canvas.width = viewport.width;
-    
+
                     var renderContext = {
                         canvasContext: context,
                         viewport: viewport
@@ -207,7 +213,7 @@
                         downloadButton.setAttribute('data-url', pdfUrl);
                         downloadButton.setAttribute('data-id', documentId);
                         downloadButton.innerText = 'click to get';
-    
+
                         // Append the canvas and button to the PDF preview container
                         var pdfPreviewContainer = document.getElementById('pdf-preview-container');
                         pdfPreviewContainer.innerHTML = ''; // Clear previous content
@@ -216,10 +222,10 @@
                     });
                 });
             });
-    
+
             $('#pdf-preview-container').on('click', '#customDownloadButton', function() {
                 var documentId = $(this).data('id');
-    
+
                 // Capture download time and save it
                 $.ajax({
                     url: '{{ route('document.update_download_time', ['documentId' => '__documentId__']) }}'.replace('__documentId__', documentId),
@@ -270,5 +276,5 @@
 
     });
     </script>
-    
+
 

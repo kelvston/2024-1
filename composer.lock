@@ -4,8 +4,79 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b561b89795eb1ca465c807efe8cb7eb4",
+    "content-hash": "ae07b1eeda1104aab28318e225ce4099",
     "packages": [
+        {
+            "name": "alphaolomi/laravel-azampay",
+            "version": "1.0.0-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alphaolomi/laravel-azampay.git",
+                "reference": "1ff74ec17ad379ff372dbacbf3e011e0bde58edd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alphaolomi/laravel-azampay/zipball/1ff74ec17ad379ff372dbacbf3e011e0bde58edd",
+                "reference": "1ff74ec17ad379ff372dbacbf3e011e0bde58edd",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.5",
+                "illuminate/contracts": "^10.0||^11.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.9",
+                "laravel/pint": "^1.14",
+                "nunomaduro/collision": "^8.1.1||^7.10.0",
+                "orchestra/testbench": "^9.0.0||^8.22.0",
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-laravel": "^2.3",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Alphaolomi\\Azampay\\AzampayServiceProvider"
+                    ],
+                    "aliases": {
+                        "Azampay": "Alphaolomi\\Azampay\\Facades\\Azampay"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Alphaolomi\\Azampay\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alpha Olomi",
+                    "email": "alphaolomi@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Azampay",
+            "homepage": "https://github.com/alphaolomi/laravel-azampay",
+            "keywords": [
+                "alphaolomi",
+                "laravel",
+                "laravel-azampay"
+            ],
+            "support": {
+                "issues": "https://github.com/alphaolomi/laravel-azampay/issues",
+                "source": "https://github.com/alphaolomi/laravel-azampay/tree/1.0.0-beta"
+            },
+            "time": "2024-06-10T16:15:06+00:00"
+        },
         {
             "name": "barryvdh/laravel-dompdf",
             "version": "v2.2.0",
@@ -3862,6 +3933,66 @@
                 }
             ],
             "time": "2023-12-11T16:03:32+00:00"
+        },
+        {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.16.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "ddf678e78d7f8b17e5cdd99c0c3413a4a6592e53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/ddf678e78d7f8b17e5cdd99c0c3413a4a6592e53",
+                "reference": "ddf678e78d7f8b17e5cdd99c0c3413a4a6592e53",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.28|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5",
+                "orchestra/testbench": "^7.7|^8.0",
+                "pestphp/pest": "^1.22",
+                "phpunit/phpunit": "^9.5.24",
+                "spatie/pest-plugin-test-time": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-20T07:29:11+00:00"
         },
         {
             "name": "spatie/laravel-permission",
@@ -8452,7 +8583,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "alphaolomi/laravel-azampay": 10
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

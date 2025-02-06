@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.showcase {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    color: #fff;
+    z-index: 10;
+}
+
+.showcase header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: url('menu.png') no-repeat center;
+    background-size: 30px;
+    cursor: pointer;
+}
+
+.toggle.active {
+    background: url('close.png') no-repeat center;
+    background-size: 25px;
+}
+
+.showcase video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.menu {
+    display: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #03a882;
+    mix-blend-mode: overlay;
+}
+
+.text {
+    position: relative;
+    z-index: 10;
+    padding: 100px 20px;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+}
+
+.text h2 {
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text h3 {
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text p {
+    font-size: 1.1em;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+}
+
+/* Fixed Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+/* General Navigation Styles */
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+}
+
+
+.nav-item {
+    position: relative;
+    margin-left: 15px; /* You can adjust this or remove for full width */
+}
+
+
+.nav-link {
+    display: block; /* Allow full-width hover */
+    padding: 15px 20px;
+    text-decoration: none; /* Ensure no underline */
+    color: white; /* Change this to your desired color */
+    font-weight: bold;
+    width: 100%; /* Ensure full width */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.nav-link:hover {
+    text-decoration: none; /* No underline on hover */
+    background-color: #3e731e; /* Green hover background color */
+}
+
+/* Dropdown Menu Styles */
+
+
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it relative to the parent */
+    background-color: #343a40; /* Background color for dropdown */
+    min-width: 200px; /* Minimum width for dropdown */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Above other content */
+    border-radius: 0.25rem; /* Rounded corners */
+}
+
+.dropdown-menu.show {
+    display: block; /* Show the dropdown when active */
+}
+.dropdown-item {
+    padding: 10px 15px;
+    color: #f8f9fa; /* Text color for dropdown items */
+    text-decoration: none;
+}
+
+.dropdown-item:hover {
+    background-color: #495057; /* Change color on hover */
+    border-radius: 0.25rem; /* Rounded corners on hover */
+}
+
+/* Dropdown Submenu Styles */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    left: 100%; /* Position to the right */
+    top: 0;
+    margin-left: 0; /* Remove default margin */
+}
+
+/* Toggle Button Styles */
+.btn {
+    color: #f8f9fa; /* Button text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer on hover */
+    text-decoration: none; /* Ensure no underline */
+}
+
+.btn:hover {
+    background-color: #3e731e; /* Change color on hover */
+}
+
+.btn:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column; /* Stack nav items on small screens */
+    }
+}
+
+/* Additional styling for the showcase section */
+.showcase {
+    margin-top: 60px; /* Adjusted for the fixed navbar */
+}
+
+.video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.dropdown-menu {
+    background-color:#333; /* Background color for dropdown menu */
+    border: 1px solid #222e1b; /* Border color */
+    border-radius: 0.25rem; /* Rounded corners */
+    padding: 0; /* Remove padding to prevent extra space */
+    margin-top: 0.5rem; /* Space between button and dropdown */
+    width: auto; /* Ensure it fits the width of the toggle */
+}
+
+.dropdown-item {
+    display: block; /* Make the dropdown item block-level */
+    width: 100%; /* Full width */
+    padding: 10px 15px; /* Adjust padding as needed */
+    color: #ffffff; /* Text color */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.dropdown-item:hover {
+    background-color: #3e731e; /* Hover background color */
+    color: #ffffff; /* Hover text color */
+}
+
+/* Optional: Ensure dropdown toggle matches dropdown items */
+.dropdown-toggle {
+    height: 40px; /* Match height for consistency */
+    width: auto; /* Match width */
+}

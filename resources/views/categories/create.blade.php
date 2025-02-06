@@ -1,7 +1,7 @@
 
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
+@section('admin-content')
 
 <div class="page-banner overlay-dark bg-image" style="background-image: url(../assets/img/blog/blog_5.jpg);">
     <div class="banner-section">
