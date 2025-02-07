@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\chatbotController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\DocumentSealController;
@@ -97,4 +98,10 @@ Route::get('case-assignments/{assignment}/edit', [CaseAssignmentController::clas
 // Update the specified case assignment
 Route::put('case-assignments/{assignment}', [CaseAssignmentController::class, 'update'])->name('case-assignments.update');
 // Lawyer Performance Routes
-Route::get('admin/lawyers/performance', [LawyerController::class, 'performance'])->name('lawyers.performance');
+//Route::get('admin/lawyers/performance', [LawyerController::class, 'performance'])->name('lawyers.performance');
+
+Route::get('/chatbot', function () {
+    return view('chatbot.chatbot');
+})->name('chatbot.view');
+
+Route::get('chatbot',[ChatBotController::class,'index'])->name('chatbot.index');

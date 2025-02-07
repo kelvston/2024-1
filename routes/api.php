@@ -19,3 +19,12 @@ Route::get('/testing',function(){
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::post('/chatbot', function (Request $request) {
+    $response = \Illuminate\Support\Facades\Http::post('http://127.0.0.1:5001/chat', [
+        'message' => $request->input('message'),
+    ]);
+    return response()->json($response->json());
+});
+
